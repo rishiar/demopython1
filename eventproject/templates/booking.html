@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOKING</title>
+    <style>
+           body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+    </style>
+</head>
+<body>
+<header>
+<div class="topnav">
+  <a class="active" href="http://127.0.0.1:8000/">Home</a>
+  <a href="#contact">Contact info</a>
+  <a href="#about">About us</a>
+</div>
+</header>
+
+<h2>BOOKING</h2>
+<form action="booking" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="first_name" placeholder="enter ur first name"><br>
+    <input type="text" name="last_name" placeholder="enter ur last name"><br>
+    <input type="email" name="email" placeholder="enter ur e-mail"><br>
+    <input type="text" name="mobile no" placeholder="enter ur mobile no."><br>
+    <input type="text" name="address" placeholder="enter ur address"><br>
+
+    <select id="input1" class="form-control">
+        <option selected>District</option>
+          <option>Ernakulam </option>
+          <option>Kollam</option>
+          <option>Trivandrum</option>
+          <option>Idukki</option>
+    </select>
+
+     <select id="input2" class="form-control">
+          <option selected>Event</option>
+          <option>Wedding Anniversary</option>
+          <option>Mehendi</option>
+          <option>MICEE Events</option>
+          <option>Birthday Programs</option>
+    </select>
+
+    <select id="input3" class="form-control">
+          <option selected>Package</option>
+          <option>GOLD Package</option>
+          <option>SILVER Package</option>
+          <option>BRONZE Package</option>
+    </select>
+
+    <select id="input4" class="form-control">
+          <option selected>Amount</option>
+          <option>GOLD-10k</option>
+          <option>SILVER-8k</option>
+          <option>BRONZE-5k</option>
+    </select><br>
+    <a href="http://127.0.0.1:8000/">  <input type="submit"></a>
+</form>
+{% for msg1 in messages %}
+<h1>{{ msg1 }}</h1>
+{% endfor %}
+
+ <br> <a  href="http://127.0.0.1:8000/" ><h2><u>Home page</u></h2></a>
+
+</body>
+</html>

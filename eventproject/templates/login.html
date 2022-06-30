@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN PAGE</title>
+    <style>
+ body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+    </style>
+
+</head>
+<body>
+<header>
+<div class="topnav">
+  <a class="active" href="http://127.0.0.1:8000/">Home</a>
+  <a href="#contact">Contact info</a>
+  <a href="#about">About us</a>
+</div>
+</header>
+
+<h2>Login</h2>
+<form action="login" method="post">
+    {% csrf_token %}
+     <input type="text" name="username" placeholder="enter your username"><br>
+    <input type="password" name="password" placeholder="enter your password"><br>
+    <input type="submit" >
+   <br> <a  href="http://127.0.0.1:8000/credentials/register" ><h2><u>Registration Link</u></h2></a>
+
+
+
+</form>
+
+</body>
+</html>
